@@ -13,5 +13,9 @@ module.exports = function(grunt) {
 			['clean', 'copy', 'less', 'jade', 'jshint', 'uglify']
 	);
 	// Default task(s).
-	grunt.registerTask('default', ['build', 'connect', 'watch']);
+	grunt.registerTask('default', ['build', 'startapp', 'watch']);
+	grunt.registerTask('startapp', function(){
+		require('./index.js');
+	});
+
 }

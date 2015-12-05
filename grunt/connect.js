@@ -3,7 +3,15 @@ module.exports = {
 		options: {
 			port: 4000,
 			hostname: "*",
-			base: "build"
+			base: "index"/*,
+			livereload: true*/
 		}
-	}
+	}/*,
+	livereload: {
+		options: {
+			port: 3000,
+			hostname: "*",
+			base: "./src/index"
+		}
+	}*/
 }

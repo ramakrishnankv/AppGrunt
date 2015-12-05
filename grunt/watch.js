@@ -1,9 +1,9 @@
 module.exports = {
 	options: {
-		livereload: false
+		livereload: true
 	},
 	scripts: {
-		files: ['src/**' ],
+		files: ['src/**', '*.js' ],
 		tasks: ['less', 'jshint', 'copy', 'jade']
 	}
 }
