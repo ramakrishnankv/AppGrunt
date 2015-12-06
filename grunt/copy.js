@@ -1,7 +1,7 @@
 module.exports = {
 	build: {
 		cwd: 'src',
-		src: ['**/*.*', '!*.jade', '!layout/*.jade', '!views/*.jade', '!template/*.jade', '!style/**' ],
+		src: ['**/*.*', '!*.jade', '!layouts/*.jade', '!views/*.jade', '!templates/*.jade', '!styles/**' ],
 		dest: 'build',
 		expand: true
 	}

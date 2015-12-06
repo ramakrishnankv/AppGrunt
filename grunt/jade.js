@@ -10,7 +10,7 @@ module.exports = {
 		files: [{
 			expand: true,
 			cwd: 'src',
-			src: [ '*.jade', '!layout/*.jade', '!template/*.jade' ],
+			src: [ '*.jade', '!layouts/*.jade', '!template/*.jade' ],
 			dest: 'build',
 			ext: '.html'
 		}]
