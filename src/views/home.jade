@@ -1,9 +1,11 @@
-doctype html
-html
-head
-title
-head
-body
-h2 Home Page #{data.name}
-body
-html
+extends ../layout/home.jade
+
+block title
+			title Home :::::::
+
+	block main
+		h1 My Article   #{data.name}
+		p Ramki creating his first node.js app with Grunt and Express
+
+
+
