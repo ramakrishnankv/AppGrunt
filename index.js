@@ -8,12 +8,20 @@ var path = require('path');
 var connect = require('./grunt/connect');
 var port = connect.server.options.port;
 
+// Serve static CSS files
+app.use('/build/styles', express.static(__dirname + '/build/styles'));
+
+// Serve static JS files
+app.use('/build/js', express.static(__dirname + '/build/js'));
+
+// Serve static image files
+app.use('/build/images', express.static(__dirname + '/build/images'));
+
 app.set('models', path.join(__dirname, './src/models/'));
 
 app.set('views', path.join(__dirname, './src/views/'));
 console.log(path.join(__dirname, './src/views/'));
 app.set('view engine', 'jade');
-app.use(express.static(path.join(__dirname, './src/public')));
 
 console.log('path of views');
 console.log(app.get('models'));

@@ -1,0 +1,66 @@
+html,
+body,
+h1, h2, h3, h4, h5, h6, h7,
+p,
+ul,
+ul li {
+	margin: 0;
+	padding: 0;
+}
+html,
+body,
+input {
+	font-size: @size-n;
+	font-family: Arial,Helvetica,sans-serif;
+}
+body {
+	line-height: @size-xl + 2;
+}
+h1, h2, h3, h4, h5, h6, h7 {
+	margin-bottom: @spacer-m;
+	line-height: normal;
+}
+*, *::after, *::before {
+	box-sizing: border-box;
+}
+#header:before, #header:after,
+#main:before, #main:after,
+#footer:before, #footer:after,
+div:before, div:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+	display:block;
+}
+blockquote, q {
+	quotes:none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content:'';
+	content:none;
+}
+table {
+	border-collapse:collapse;
+	border-spacing:0;
+}
+hr {
+	display: block;
+}
+ol,
+ul {
+	list-style: none;
+}
+img {
+	border: 0;
+}
+a {
+	text-decoration: none;
+	color: #02345E;
+}
+a:hover {
+	color: #00EDFF;
+}

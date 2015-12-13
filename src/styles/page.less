@@ -1,0 +1,46 @@
+#header,
+#main,
+#pane,
+#footer {
+    padding: @spacer-l @spacer-l;
+}
+#header {
+    border-bottom: 1px solid #CCCCCC;
+    color: #FFFFFF;
+    .gradient-linear-v (0px, 100%, #000000, #00253C);
+}
+#logo {
+    float: left;
+    height: 40px;
+    width: 200px;
+    overflow: hidden;
+    position: relative;
+
+    > * {
+        float: left;
+    }
+
+    h2 {
+        margin: @spacer-m 0 0 @spacer-m;
+    }
+}
+.headerList {
+    float: right;
+}
+.headerList a {
+    color: #00B1FF;
+}
+#footer {
+    .gradient-linear-v (0px, 25%, #CCCCCC, #FFFFFF);
+    text-align: center;
+}
+.home-page {
+    #main {
+        float: left;
+        width: 75%;
+    }
+    #pane {
+        float: left;
+        width: 25%;
+    }
+}

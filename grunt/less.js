@@ -1,11 +1,11 @@
 module.exports = {
 	development: {
 		options: {
-			paths: ["src/style"],
+			paths: ["build/styles"],
 			ieCompat: true
 		},
 		files: {
-			"build/style/base.css": "src/style/base.less"
+			"build/styles/base.css": "src/styles/base.less"
 		}
 	}/*,
 	production: {

@@ -1,12 +1,14 @@
 doctype html
 html
 	head
-	include ./meta.jade
-	include ./styleList.jade
+	include ./include/meta.jade
+	include ./include/styleList.jade
 		block title
-			title Sample App :: Home ::
+			title title
 	body
-		include ./header.jade
-		block pageContent
+		#wrapper
+			include ./include/header.jade
+			#pageContent
+				block pageContent
 
-		include ./footer.jade
+			include ./include/footer.jade

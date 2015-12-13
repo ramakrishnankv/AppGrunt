@@ -18,3 +18,10 @@ Once you understand about Grunt and creating tasks refer this how to create the 
 http://www.sitepoint.com/writing-awesome-build-script-grunt/
 
 Once the taks are created in Gruntfile.js, grouping Grunt tasks and breaking down to multiple small files is explained here http://www.html5rocks.com/en/tutorials/tooling/supercharging-your-gruntfile/
+
+TODO:
+cache
+require js
+styles
+layout
+templates

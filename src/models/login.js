@@ -1,3 +1,6 @@
 module.exports = {
-    "name": "Login modified"
+    "page": {
+        "title": "Please Login"
+    },
+    "name": "Login Page"
 };

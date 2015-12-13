@@ -1,11 +1,15 @@
 extends ../layout/home.jade
 
 block title
-			title Home :::::::
+	title #{data.page.title}
 
-	block main
-		h1 My Article   #{data.name}
-		p Ramki creating his first node.js app with Grunt and Express
+block main
+	h1 #{data.name}
+
+	include ../templates/searchForm.jade
+
+block pane
+	include ../templates/adBlock.jade
 
 
 
