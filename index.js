@@ -23,12 +23,18 @@ console.log(path.join(__dirname, './src/views/'));
 app.set('view engine', 'jade');
 
 // dynamically include routes (Controller)
-fs.readdirSync('./src/controllers').forEach(function (file) {
+fs.readdirSync('./src/controllers').forEach(function (file, index) {
   if(file.substr(-3) == '.js') {
       route = require('./src/controllers/' + file);
       route.controller(app);
   }
 });
+
+// handle 404 Errors - after all controllers are loaded
+var error404 = require('./src/errors/error404')(app);
+
+// log Errors
+var errorHandler = require('./src/errors/errorHandler')(app);
 
 var server = app.listen(port, function(){
 	var host = server.address().address;
@@ -36,5 +42,3 @@ var server = app.listen(port, function(){
 
       console.log('Example app listening at http://%s:%s', host, port);
 })
-
-//module.exports = app;
