@@ -5,9 +5,9 @@
     padding: @spacer-l @spacer-l;
 }
 #header {
-    border-bottom: 1px solid #CCCCCC;
-    color: #FFFFFF;
-    .gradient-linear-v (0px, 100%, #000000, #00253C);
+    border-bottom: 1px solid @gray;
+    color: @white;
+    .gradient-linear-v (0px, 100%, @black, @blue-darkest);
 }
 #logo {
     float: left;
@@ -28,10 +28,10 @@
     float: right;
 }
 .headerList a {
-    color: #00B1FF;
+    color: @blue-lit;
 }
 #footer {
-    .gradient-linear-v (0px, 25%, #CCCCCC, #FFFFFF);
+    .gradient-linear-v (0px, 25%, @gray, @white);
     text-align: center;
 }
 .home-page {

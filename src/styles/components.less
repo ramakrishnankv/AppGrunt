@@ -1,3 +1,7 @@
+/* ERROR */
+.error {
+	background-color: @error;
+}
 /* LIST */
 ol.list-num {
     list-style-type: number;
@@ -33,7 +37,7 @@ ul.list-pipe li > * {
 ul.list-pipe li:before {
     content: "|";
     float: left;
-    color: #CCCCCC;
+    color: @gray;
     padding-right: @spacer-m;
 }
 ul.list-pipe li:first-of-type {
@@ -54,14 +58,14 @@ label > span {
 }
 input {
     background: transparent;
-    box-shadow: inset 0 0 5px 0 #DEDEDE;
-    border: 1px solid #DEDEDE;
+    box-shadow: inset 0 0 5px 0 @gray-lit;
+    border: 1px solid @gray-lit;
     .border-radius(3px);
     padding: @spacer-n + 2 @spacer-m @spacer-n + 3;
 
     &:focus {
-        border-color: #C5E1E3;
-        box-shadow: inset 0 0 5px 0 #C5E1E3;
+        border-color: @blue-liter;
+        box-shadow: inset 0 0 5px 0 @blue-liter;
     }
     &.medium {
 
