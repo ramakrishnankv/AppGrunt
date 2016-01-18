@@ -1,9 +1,15 @@
 .gradient-linear-v (@top, @bottom, @fColor, @lColor) {
-    background-image: linear-gradient(@fColor @top, @lColor @bottom);
+	background-image: linear-gradient(@fColor @top, @lColor @bottom);
 }
 .border-radius (@size) {
-    -moz-border-radius: @size;
-    -webkit-border-radius: @size;
-    -ms-border-radius: @size;
-    border-radius: @size;
+	-moz-border-radius: @size;
+	-webkit-border-radius: @size;
+	-ms-border-radius: @size;
+	border-radius: @size;
+}
+.box-sizing (@sizing) {
+	-moz-box-sizing: @sizing;
+	-webkit-box-sizing: @sizing;
+	-ms-box-sizing: @sizing;
+	box-sizing: @sizing;
 }
