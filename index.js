@@ -17,6 +17,7 @@ app.use('/build/js', express.static(__dirname + '/build/js'));
 app.use('/build/images', express.static(__dirname + '/build/images'));
 
 app.set('models', path.join(__dirname, './src/models/'));
+app.set('modelsInclude', path.join(__dirname, './src/models/include/'));
 
 app.set('views', path.join(__dirname, './src/views/'));
 console.log(path.join(__dirname, './src/views/'));

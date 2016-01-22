@@ -13,3 +13,14 @@
 	-ms-box-sizing: @sizing;
 	box-sizing: @sizing;
 }
+
+/* clearfix */
+.clearfix() {
+	&:before, &:after {
+		content: " ";
+		display: table;
+	}
+	&:after {
+		clear: both;
+	}
+}

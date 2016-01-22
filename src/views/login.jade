@@ -5,4 +5,9 @@ block title
 
 block main
 	h1 !{data.name} 
-	p Coming soon..........
+	p
+		if data.user
+			span !{data.user.id} &nbsp;
+			span !{data.user.name}
+		else
+			span Welcome

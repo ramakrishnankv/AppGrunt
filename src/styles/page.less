@@ -11,8 +11,8 @@
 }
 #logo {
     float: left;
-    height: 40px;
-    width: 200px;
+    height: @spacer-l * 2;
+    width: @spacer-xl * 8;
     overflow: hidden;
     position: relative;
 
@@ -24,8 +24,17 @@
         margin: @spacer-m 0 0 @spacer-m;
     }
 }
+.menu {
+	float: right;
+	text-align: right;
+}
+.user {
+	.clearfix();
+	min-height: @spacer-l;
+	padding-right: @spacer-m;
+}
 .headerList {
-    float: right;
+    .clearfix();
 }
 .headerList a {
     color: @blue-lit;
