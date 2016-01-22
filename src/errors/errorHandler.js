@@ -1,7 +1,11 @@
 module.exports = function(app) {
     app.use(function(err, req, res, next) {
         console.error(err);
-        var data = require(app.get('models') + 'error.js');
+	    if (req.xhr) {
+	        res.send(500, {error: 'Oops'});
+	    } else {
+	        next(err);
+	    }
         res.redirect('/error');
     });
 };
