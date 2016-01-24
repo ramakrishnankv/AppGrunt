@@ -1,7 +1,10 @@
+// TODO: move this to a separate file & function
+var renderView = function(req, res) {
+	console.log('to request');
+	console.log(JSON.parse(req.loginModel));
+	res.render('login', {data: JSON.parse(req.loginModel)});
+};
 module.exports.controller = function(app) {
-	app.get("/login", function(req, res, next) {
-		// doo all the logic with data
-		var data = JSON.parse(require(app.get('models') + 'login.js')(app));
-		res.render('login', {data: data});
-	});
+	var getData = require(app.get('models') + 'login.js')(app);
+	app.get('/login', getData, renderView);
 };
