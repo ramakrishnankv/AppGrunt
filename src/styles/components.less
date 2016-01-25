@@ -4,87 +4,99 @@
 }
 /* LIST */
 ol.list-num {
-    list-style-type: number;
+	list-style-type: number;
 }
 ol.list-alpha-lower {
-    list-style-type: lower-alpha;
+	list-style-type: lower-alpha;
 }
 ol.list-alpha-upper {
-    list-style-type: upper-alpha;
+	list-style-type: upper-alpha;
 }
 ol.list-roman-lower {
-    list-style-type: lower-roman;
+	list-style-type: lower-roman;
 }
 ol.list-roman-upper {
-    list-style-type: upper-roman;
+	list-style-type: upper-roman;
 }
 ul.list-bullet {
-    list-style-type: disc;
+	list-style-type: disc;
 }
 ul.list-square {
-    list-style-type: square;
+	list-style-type: square;
 }
 ul.list-pipe {
-    list-style-type: none;
+	list-style-type: none;
 }
 ul.list-pipe li {
-    float: left;
-    padding-right: @spacer-m;
+	float: left;
+	padding-right: @spacer-m;
 }
 ul.list-pipe li > * {
-    float: left;
+	float: left;
 }
 ul.list-pipe li:before {
-    content: "|";
-    float: left;
-    color: @gray;
-    padding-right: @spacer-m;
+	content: "|";
+	float: left;
+	color: @gray;
+	padding-right: @spacer-m;
 }
 ul.list-pipe li:first-of-type {
-    padding-left: @spacer-m;
+	padding-left: @spacer-m;
 }
 ul.list-pipe li:first-of-type:before {
-    content: "";
-    padding: 0;
+	content: "";
+	padding: 0;
+}
+dl dt,
+dl dd {
+	float: left;
+}
+dl dt {
+	width: 30%;
+}
+dl dd {
+	margin: 0;
+	padding-left: @spacer-m;
+	width: 70%;
 }
 
 /* INPUTS */
 label {
-    padding: @spacer-n 0;
+	padding: @spacer-n 0;
 }
 label,
 label > span {
-    margin-right: @spacer-m;
+	margin-right: @spacer-m;
 }
 input {
-    background: transparent;
-    box-shadow: inset 0 0 5px 0 @gray-lit;
-    border: 1px solid @gray-lit;
-    .border-radius(3px);
-    padding: @spacer-n + 2 @spacer-m @spacer-n + 3;
+	background: transparent;
+	box-shadow: inset 0 0 5px 0 @gray-lit;
+	border: 1px solid @gray-lit;
+	.border-radius(3px);
+	padding: @spacer-n + 2 @spacer-m @spacer-n + 3;
 
-    &:focus {
-        border-color: @blue-liter;
-        box-shadow: inset 0 0 5px 0 @blue-liter;
-    }
-    &.medium {
+	&:focus {
+		border-color: @blue-liter;
+		box-shadow: inset 0 0 5px 0 @blue-liter;
+	}
+	&.medium {
 
-    }
-    &.large {
-        width: 100%;
-    }
+	}
+	&.large {
+		width: 100%;
+	}
 }
 label.compact {
-    display: block;
+	display: block;
 
-    &:before,
-    &:after {
-        content: "";
-        display: table;
-        clear: both;
-    }
-    > span {
-        display: block;
-    }
+	&:before,
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+	> span {
+		display: block;
+	}
 }
 

@@ -1,14 +1,14 @@
 module.exports = function(app) {
 	return function(req, res, next) {
 		var loginModel = {};
-    	var user = require(app.get('modelsInclude') + 'user');
-    	var names = ['Login'];
-    	var page = {};
-    	page.title = 'Please Login';
-    	loginModel.page = page;
-    	loginModel.name = names[0];
-    	loginModel.geonames = {};
-		//loginModel.user = user;
+		var user = require(app.get('modelsInclude') + 'user');
+		var names = ['Login'];
+		var page = {};
+		page.title = 'Please Login';
+		loginModel.page = page;
+		loginModel.name = names[0];
+		loginModel.geonames = {};
+		loginModel.user = user;
 		loginModel = JSON.stringify(loginModel);
 
 		var http = require('http');
@@ -29,35 +29,28 @@ module.exports = function(app) {
 		};
 
 		var request = http.request(options, function(response) {
-			  // response is here
-				var geonames = '';
-				console.log(options.host + ':' + response.statusCode);
-				//response.setEncoding('utf8');
-				console.log('starting data......... request.....');
+			// response is here
+			var geonames = '';
+			response.setEncoding('utf8');
 
-				response.on('data', function(chunk) {
-					console.log(chunk);
-					geonames += chunk;
-				});
-
-				response.on('end', function() {
-					console.log(geonames);
-					JSON.stringify(loginModel);
-					// TODO: SOLVE THE PROBLEM
-					loginModel.geonames = JSON.stringify(geonames);
-					JSON.stringify(loginModel);
-					req.loginModel = loginModel;
-					next();
-				});
+			response.on('data', function(chunk) {
+				geonames += chunk;
+				geonames = JSON.parse(geonames);
 			});
 
-			request.on('error', function(err) {
-				//throw new Error(err + ' Ajax request failed');
-				console.log('no data');
+			response.on('end', function() {
+				// parse before concatenate the received object
+				loginModel = JSON.parse(loginModel);
+				loginModel.geonames = geonames;
+				req.loginModel = JSON.stringify(loginModel);
+				next();
 			});
+		});
 
-			console.log('content printing....');
-			//req.write(postData); // can be used query string data
+		request.on('error', function(err) {
+			// error - Request failed, check the url http/https is not required');
+			next(err);
+		});
 
 		request.end();
 	};

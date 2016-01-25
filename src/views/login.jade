@@ -7,9 +7,19 @@ block main
 	h1 !{data.name} 
 	p
 		if data.user
-			span !{data.user.id} &nbsp;
-			span !{data.user.name}
+			span User ID: !{data.user.id} &nbsp;
+			span User Name: !{data.user.name}
 		else
 			span Welcome
 	div.simple-container
-		p !{data.geonames[0]}
+		p
+			if data.geonames.geonames && data.geonames.geonames.length >= 1
+				//!{data.geonames.geonames[0].lng}
+				dl
+					each item, index in data.geonames.geonames
+						each it, ind in item
+							dt !{ind} :
+							dd !{it}
+			else if data.geonames.status
+				span !{data.geonames.status.value} : !{data.geonames.status.message}
+
