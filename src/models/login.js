@@ -11,6 +11,7 @@ module.exports = function(app) {
 		loginModel.user = user;
 		loginModel = JSON.stringify(loginModel);
 
+		//TODO: Make this common requester
 		var http = require('http');
 		//var url = 'http://jsonplaceholder.typicode.com';
 		//var url = 'www.google.com';
@@ -42,7 +43,8 @@ module.exports = function(app) {
 				// parse before concatenate the received object
 				loginModel = JSON.parse(loginModel);
 				loginModel.geonames = geonames;
-				req.loginModel = JSON.stringify(loginModel);
+				req.appPageData = JSON.stringify(loginModel);
+				req.appPageView = 'login';
 				next();
 			});
 		});
