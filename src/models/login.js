@@ -1,4 +1,13 @@
 module.exports = function(app) {
+	//TODO: Middleware requestHandler not working - to be fixed.
+	var urls = ['http://jsonplaceholder.typicode.com/posts/1',
+				'http://api.geonames.org/findNearbyJSON?lat=47.3&lng=9&username=demo'];
+	var requestHandler = require(app.get('helpers') + 'requestHandler');
+	function callback(dt) {
+		console.log(dt);
+	}
+	app.use(requestHandler(urls, callback));
+
 	return function(req, res, next) {
 		var loginModel = {};
 		var user = require(app.get('modelsInclude') + 'user');
