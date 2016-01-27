@@ -15,6 +15,7 @@
 var http = require('http');
 
 module.exports = function(urls, callback) {
+	console.log(urls instanceof Array);
 	return function requestHandler(req, res, next) {
 		console.log('requestHandler : Initialized');
 		if (typeof urls === 'object' && urls instanceof Array) {
@@ -46,7 +47,7 @@ module.exports = function(urls, callback) {
 					// error - Request failed, check the url, http/https is required;
 					next(err);
 				});
-				request.end();
+				//request.end();
 			});
 		}
 		else {

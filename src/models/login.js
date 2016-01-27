@@ -1,14 +1,28 @@
-module.exports = function(app) {
+module.exports = function (app) {
 	//TODO: Middleware requestHandler not working - to be fixed.
+
+	return function (req, res, next) {
+
 	var urls = ['http://jsonplaceholder.typicode.com/posts/1',
 				'http://api.geonames.org/findNearbyJSON?lat=47.3&lng=9&username=demo'];
-	var requestHandler = require(app.get('helpers') + 'requestHandler');
-	function callback(dt) {
-		console.log(dt);
-	}
-	app.use(requestHandler(urls, callback));
 
-	return function(req, res, next) {
+
+	console.log('till ehre...............');
+
+	var callback = function (responseData) {
+		console.log('hhhhhhhhhhhhhhhhhhhhhhhh');
+		console.log(responseData);
+		req.appPageData = JSON.stringify(responseData);
+		req.appPageView = 'login';
+		console.log(next());
+		next();
+	};
+		var requestHandler = require(app.get('helpers') + 'requestHandler')(urls, callback);
+		app.use(requestHandler(urls, callback), function(req, res, next) {console.log('hi');});
+	};
+
+
+	/*return function (req, res, next) {
 		var loginModel = {};
 		var user = require(app.get('modelsInclude') + 'user');
 		var names = ['Login'];
@@ -64,5 +78,5 @@ module.exports = function(app) {
 		});
 
 		request.end();
-	};
+	};*/
 };
