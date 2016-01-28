@@ -16,7 +16,7 @@ var http = require('http');
 
 module.exports = function(urls, callback) {
 	console.log(urls instanceof Array);
-	return function requestHandler(req, res, next) {
+	return function () {
 		console.log('requestHandler : Initialized');
 		if (typeof urls === 'object' && urls instanceof Array) {
 
@@ -28,16 +28,19 @@ module.exports = function(urls, callback) {
 				var request = http.get(url, function(response) {
 					response.setEncoding('utf8');
 					response.on('data', function(chunk) {
+						console.log(typeof chunk);
 						responseData.push(chunk);
 					});
 
 					response.on('end', function() {
 						urlCount ++;
 						if (urlCount == urls.length) {
-							//TODO: Move and Remove these objects
+							//TODO: \n to be replaced to contineu...................
 							//req.appPageData = JSON.stringify(responseData);
                             //req.appPageView = pageView;
-                            callback(responseData.toString());
+							console.log('callback');
+							console.log(responseData);
+                            callback(responseData);
                             //next();
 						}
 
@@ -45,7 +48,7 @@ module.exports = function(urls, callback) {
 				});
 				request.on('error', function(err) {
 					// error - Request failed, check the url, http/https is required;
-					next(err);
+					//next(err);
 				});
 				//request.end();
 			});

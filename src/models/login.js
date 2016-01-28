@@ -1,7 +1,17 @@
-module.exports = function (app) {
-	//TODO: Middleware requestHandler not working - to be fixed.
+module.exports = function (req, res, next) {
 
-	return function (req, res, next) {
+	var app = req.app;
+
+	var loginModel = {};
+			var user = require(app.get('modelsInclude') + 'user');
+			var names = ['Login'];
+			var page = {};
+			page.title = 'Please Login';
+			loginModel.page = page;
+			loginModel.name = names[0];
+			loginModel.user = user;
+			loginModel = JSON.stringify(loginModel);
+			req.appPageData = loginModel;
 
 	var urls = ['http://jsonplaceholder.typicode.com/posts/1',
 				'http://api.geonames.org/findNearbyJSON?lat=47.3&lng=9&username=demo'];
@@ -9,30 +19,33 @@ module.exports = function (app) {
 
 	console.log('till ehre...............');
 
+
+
 	var callback = function (responseData) {
 		console.log('hhhhhhhhhhhhhhhhhhhhhhhh');
 		console.log(responseData);
-		req.appPageData = JSON.stringify(responseData);
+		var resData = JSON.parse(responseData);
+		var obj = ['typicode', 'geonames'];
+		console.log(typeof resData);
+		console.log(resData);
+		//req.appPageData.typicode=JSON.parse(responseData);
+		//req.appPageData.geonames=responseData[1];
+		resData.forEach(function(a, index) {
+			var prop = obj[index];
+			console.log(prop);
+			req.appPageData['"' + prop + '"'] = a;
+		});
+		console.log(req.appPageData);
 		req.appPageView = 'login';
-		console.log(next());
 		next();
 	};
 		var requestHandler = require(app.get('helpers') + 'requestHandler')(urls, callback);
-		app.use(requestHandler(urls, callback), function(req, res, next) {console.log('hi');});
-	};
+		//app.use(requestHandler);
+		requestHandler();
 
 
 	/*return function (req, res, next) {
-		var loginModel = {};
-		var user = require(app.get('modelsInclude') + 'user');
-		var names = ['Login'];
-		var page = {};
-		page.title = 'Please Login';
-		loginModel.page = page;
-		loginModel.name = names[0];
-		loginModel.geonames = {};
-		loginModel.user = user;
-		loginModel = JSON.stringify(loginModel);
+
 
 		//TODO: Make this common requester
 		var http = require('http');
