@@ -1,5 +1,6 @@
 extends ../layout/home.jade
 
+if data
 block title
 	title !{data.page.title}
 
@@ -12,14 +13,26 @@ block main
 		else
 			span Welcome
 	div.simple-container
-		p
-			if data.geonames.geonames && data.geonames.geonames.length >= 1
-				//!{data.geonames.geonames[0].lng}
-				dl
-					each item, index in data.geonames.geonames
-						each it, ind in item
-							dt !{ind} :
-							dd !{it}
-			else if data.geonames.status
-				span !{data.geonames.status.value} : !{data.geonames.status.message}
+		if data.geonames && data.geonames.geonames && data.geonames.geonames.length >= 1
+			dl
+				each item, index in data.geonames.geonames
+					each it, ind in item
+						dt !{ind} :
+						dd !{it}
+		else if data.geonames && data.geonames.status
+			span !{data.geonames.status.value} : !{data.geonames.status.message}
+		else
+			span Oooops! no data available!!!!
 
+block pane
+	div.simple-container
+		if data.typicode && data.typicode.id
+			ul
+				li ID: !{data.typicode.id} User ID: !{data.typicode.userId}
+				li
+					h3 !{data.typicode.title}
+				li !{data.typicode.body}
+		else if data.typicode && data.typicode.status
+			span !{data.typicode.status.message}
+		else
+			span Oooops! no data available!!!!
