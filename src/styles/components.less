@@ -62,22 +62,26 @@ dl dd {
 
 /* INPUTS */
 label {
+	float: left;
 	padding: @spacer-n 0;
 }
 label,
 label > span {
 	margin-right: @spacer-m;
 }
+select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input,
 input {
 	background: transparent;
 	box-shadow: inset 0 0 5px 0 @gray-lit;
 	border: 1px solid @gray-lit;
 	.border-radius(3px);
+	font-size: 16px;
+	height: auto;
 	padding: @spacer-n + 2 @spacer-m @spacer-n + 3;
 
 	&:focus {
-		border-color: @blue-liter;
-		box-shadow: inset 0 0 5px 0 @blue-liter;
+		/*border-color: @blue-liter;*/
+		/*box-shadow: inset 0 0 5px 0 @blue-liter;*/
 	}
 	&.medium {
 

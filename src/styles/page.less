@@ -1,13 +1,15 @@
+#pageContent {
+	padding: @spacer-l @spacer-l 0 @spacer-l;
+}
 #header,
-#main,
-#pane,
 #footer {
-	padding: @spacer-l @spacer-l;
+	padding: @spacer-l 0 0;
 }
 #header {
 	border-bottom: 1px solid @gray;
 	color: @white;
 	.gradient-linear-v (0px, 100%, @black, @blue-darkest);
+	padding-bottom: @spacer-l;
 }
 #logo {
 	float: left;
@@ -20,7 +22,7 @@
 		float: left;
 	}
 
-	h2 {
+	h3 {
 		margin: @spacer-m 0 0 @spacer-m;
 	}
 }
@@ -41,15 +43,14 @@
 }
 #footer {
 	.gradient-linear-v (0px, 25%, @gray, @white);
+	padding-bottom: @spacer-l;
 	text-align: center;
 }
 .home-page {
 	#main {
 		float: left;
-		width: 75%;
 	}
 	#pane {
 		float: left;
-		width: 25%;
 	}
 }
