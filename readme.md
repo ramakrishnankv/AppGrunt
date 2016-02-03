@@ -19,6 +19,9 @@ http://www.sitepoint.com/writing-awesome-build-script-grunt/
 
 Once the taks are created in Gruntfile.js, grouping Grunt tasks and breaking down to multiple small files is explained here http://www.html5rocks.com/en/tutorials/tooling/supercharging-your-gruntfile/
 
+favicon:
+Ref: https://www.w3.org/2005/10/howto-favicon
+
 TODO:
 cache
 require js
