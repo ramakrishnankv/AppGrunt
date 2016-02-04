@@ -36,3 +36,13 @@ block pane
 			span !{data.typicode.status.message}
 		else
 			span Oooops! no data available!!!!
+
+	div.simple-container
+
+		if Object.keys(data.urlParameters).length > 0
+			h4 Reading from URI Parameters of !{Object.keys(data.urlParameters).length}:
+			ul
+				each urlItem, index in data.urlParameters
+					li(class="params") !{index} :: !{urlItem} :: is typeof !{typeof urlItem}
+		else
+			span No uri parameters available. Add parameters to the url to reflect here.
