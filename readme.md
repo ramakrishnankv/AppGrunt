@@ -42,8 +42,25 @@ src/views
 
 
 TODO:
-cache
 require js
-styles
-layout
-templates
+For node - http://requirejs.org/docs/node.html
+
+font-icons
+update live reload
+
+Mongo db
+Angular js
+
+styles - minify
+js - minify
+test - jasmin
+
+Unit test:
+QUnit - https://qunitjs.com/intro/
+Unit, Assert, Must, Should, Sinon - http://unitjs.com/
+Mocha, Should.... - http://www.clock.co.uk/blog/tools-for-unit-testing-and-quality-assurance-in-node-js
+The Node.js Way - Testing Essentials - http://fredkschott.com/post/2014/05/nodejs-testing-essentials/
+
+handle POST - routers
+cache
+Debug tool for node
