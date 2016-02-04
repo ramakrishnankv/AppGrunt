@@ -3,17 +3,17 @@
 }
 #header,
 #footer {
-	padding: @spacer-l 0 0;
+	padding: @spacer-l @spacer-m;
 }
 #header {
 	border-bottom: 1px solid @gray;
 	color: @white;
 	.gradient-linear-v (0px, 100%, @black, @blue-darkest);
-	padding-bottom: @spacer-l;
 }
 #logo {
 	float: left;
 	height: @spacer-l * 2;
+	margin-left: @spacer-m;
 	width: @spacer-xl * 8;
 	overflow: hidden;
 	position: relative;
@@ -43,7 +43,6 @@
 }
 #footer {
 	.gradient-linear-v (0px, 25%, @gray, @white);
-	padding-bottom: @spacer-l;
 	text-align: center;
 }
 .home-page {

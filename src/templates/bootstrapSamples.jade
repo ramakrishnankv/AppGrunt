@@ -1,0 +1,47 @@
+div.row-fluid
+	div.simple-container.span2 span 2
+	div.simple-container.span2 span 2
+	div.simple-container.span2 span 2
+	div.simple-container.span2 span 2
+	div.simple-container.span2 span 2
+	div.simple-container.span2 span 2
+
+div.row-fluid
+	div.simple-container.span4 span 4
+	div.simple-container.span8 span 8
+
+div.row-fluid
+	div.simple-container.span3 span 3
+	div.simple-container.span9 span 9
+
+
+div.row-fluid
+	div.simple-container.span6 testing 2
+	div.simple-container.span6 testing 100
+
+.plain-container.row-fluid
+	h4 These Button Groups are in plain-container
+	.btn-group
+		a.btn.btn-large(href="/") #[i(class="icon-home")]
+			|Home
+		button.btn.btn-large No Action
+		button.btn.btn-large No Action
+	.btn-toolbar
+		.btn-group
+			a(class="btn" href="#") #[i(class="icon-align-left")]
+			a(class="btn" href="#") #[i(class="icon-align-center")]
+			a(class="btn" href="#") #[i(class="icon-align-right")]
+			a(class="btn" href="#") #[i(class="icon-align-justify")]
+
+.plain-container.row-fluid
+	h4 This Button is in plain-container
+	button(class="btn btn-large btn-primary" type="button") Submit
+
+.plain-container.row-fluid.form-horizontal
+	.control-group
+		label(class="control-label" for="inputIcon")
+			|Email address
+		div.controls
+			div.input-prepend
+				span.add-on #[i(class="icon-envelope")]
+				input(class="span6" id="inputIcon" type="text")

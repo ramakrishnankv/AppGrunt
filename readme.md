@@ -22,6 +22,25 @@ Once the taks are created in Gruntfile.js, grouping Grunt tasks and breaking dow
 favicon:
 Ref: https://www.w3.org/2005/10/howto-favicon
 
+To create a new page:
+src/controllers
+	duplicate any existing file to 'layoutExamples.js'
+	line 2 update the url '/layoutExamples'
+	line 4 change the data '+ layoutExamples'
+	line 5 change first param of render method to 'layoutExamples'
+
+src/models
+	duplicate any existing file to 'layoutExamples.js'
+	replace homeModel to layoutExamplesModel
+	change to var names = ['Layout Examples']
+	change page.title to 'Layout Examples page'
+
+src/views
+	duplicate any existing .jade file to layoutExamples.jade
+	add required included files from src/templates folder using jade.
+
+
+
 TODO:
 cache
 require js

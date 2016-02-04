@@ -4,7 +4,8 @@ block title
 	title #{data.page.title}
 
 block main
-	h1 #{data.name}
-	p
-		span.error !{data.comingSoon}
-	p !{data.escapeMsg}
+	.plain-container
+		h1 #{data.name}
+		p
+			span.error !{data.comingSoon}
+		p !{data.escapeMsg}

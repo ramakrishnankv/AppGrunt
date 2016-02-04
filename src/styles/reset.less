@@ -65,3 +65,17 @@ a {
 a:hover {
 	color: @blue-dark;
 }
+/* Bootstrap Resets Begin */
+.btn-large [class^="icon-"] {
+	vertical-align: top;
+	margin-right: @spacer-n;
+}
+.add-on,
+.add-on:before,
+.add-on:after {
+	.box-sizing (content-box);
+}
+.add-on + #inputIcon {
+	padding: @spacer-n - 1 @spacer-m;
+}
+/* Bootstrap Resets End */
