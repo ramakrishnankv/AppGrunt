@@ -51,6 +51,8 @@ update live reload
 Mongo db
 Angular js
 
+push html5 - Web Sockets
+
 styles - minify
 js - minify
 test - jasmin
