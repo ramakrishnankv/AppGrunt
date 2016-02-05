@@ -4,5 +4,5 @@ module.exports = {
 			jQuery: true
 		}
 	},
-	src: ['src/**/*.js']
+	src: ['src/**/*.js', '!src/js/vendor/**/*.js']
 }
