@@ -1,18 +1,18 @@
-define('MyAgent', ['jquery'], function($) {
-	var MyAgent = function(el, options) {
+define('TestAgent', ['jquery'], function($) {
+	var TestAgent = function(el, options) {
 		this.element = el;
 		this.attachEvents();
 	};
 
-	MyAgent.prototype = {
+	TestAgent.prototype = {
 		attachEvents: function() {
 			console.log(this.element);
 			this.element.on('click', $.proxy(this.analyse, this));
 		},
 		analyse: function() {
-			console.log('clicked on MyAgent');
+			console.log('TestAgent clicked on');
 		}
 	} ;
 
-	return MyAgent;
+	return TestAgent;
 });

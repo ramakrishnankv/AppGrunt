@@ -39,11 +39,37 @@ src/views
 	duplicate any existing .jade file to layoutExamples.jade
 	add required included files from src/templates folder using jade.
 
+Require JS
+For node - http://requirejs.org/docs/node.html
+
+Creating client-side javascript (uses jQuery)
+
+Find elements that has attribute data-agent and attach agents to the element
+data-agent = '<agent variable name>'
+Other data-* attributes are options / data passed to the constructor function as second parameter
+First parameter would be jQuery(element) that data-agent is attached
+
+Markup:
+ <div data-agent="MyAgent" data-option1="option1" data-option2="option2">
+lightbox.js
+ define('MyAgent', ['jquery'], function($) {
+ 	var MyAgent = function(el, options) {
+
+ 	};
+   MyAgent.prototype = { define prototype here }
+
+  return MyAgent;
+
+ });
+Note: return the constructor function always - required by requireJS.
 
 
 TODO:
-require js
-For node - http://requirejs.org/docs/node.html
+lightbox
+
+Remove: temp agents
+TestAgent: '/build/js/TestAgent'
+MyAgent: '/build/js/components/MyAgent'
 
 font-icons
 update live reload

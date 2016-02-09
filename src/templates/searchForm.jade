@@ -1,18 +1,20 @@
 .form-module.simple-container
-    label(data-agent="MyAgent")
+    label(data-agent="MyAgent" data-what="first")
         span User Name:
         input(type="text" placeholder="temp" value="")
 
-    label(data-agent="MyAgent")
+    label(data-agent="MyAgent" data-what="second")
         span Password:
         input(type="password" value="")
 
-    label.compact(data-agent="MyAgent")
+    label.compact(data-agent="MyAgent" data-what="third" data-newbie="I am new")
         span User Name:
         input.large(type="text" placeholder="temp" value="")
 
-    label.compact
+    label.compact(data-agent="TestAgent" data-what="third" data-newbie="I am new")
         span Password:
         input(type="password" value="")
 
     .small Something is important that nothing is a proverb that used in everyone's life regularly! Something is important that nothing is a proverb that used in everyone's life regularly! Something is important that nothing is a proverb that used in everyone's life regularly! Something is important that nothing is a proverb that used in everyone's life regularly!
+
+    a.link(href="http://www.google.com" data-href="http://www.google.com" target="_blank") Get google for me
