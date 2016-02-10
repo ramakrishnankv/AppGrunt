@@ -211,9 +211,6 @@ define("lightbox",
 				$lightboxContent.css({"opacity":"1"});
 
 			}
-			
-			fireTracking($lightboxContent);
-
 		};
 	
 		// closes lightbox, performs cleanup
@@ -278,24 +275,6 @@ define("lightbox",
 			};
 		};
 	
-		// fire webtrends tag for any errors on the lightbox
-		var fireTracking = function ($el) {
-			
-			var errors = $el.find('p[data-context^="message-"]'), //find all errors on the lightbox content
-				codes = [];
-			
-			errors.each(function(error) { 
-				codes.push(error.readAttribute('data-context').split('-')[1]); //eg data-context="message-1234" gives 1234
-			});
-			
-			if (codes.length > 0) {
-				$d.trigger("webtrends:multiTrackEvent", {
-					"DCSext.er": codes.join(";") //multiple errors are semicolon separated in webtrends
-				});
-			}
-			
-		};
-
 		// listeners
 		$d.on("lightbox:open", function(e, memo) {
 			modal = false;
@@ -307,7 +286,7 @@ define("lightbox",
 		});
 		$d.on("click", "input[type=submit][data-rel~=lightbox]", handleInput(false));
 		$d.on("click", "input[type=submit][data-rel~=modal]", handleInput(true));
-		$d.on("click", "a[rel~=lightbox]", handleLink(false));
+		$d.on("click", "a[rel~=lightbox]", function(){$d.trigger("lightbox:open");});
 		$d.on("click", "a[rel~=modal]", handleLink(true));
 		$d.on("click", "a[rel~=close]", function(e) {
 			close();

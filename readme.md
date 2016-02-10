@@ -65,7 +65,7 @@ Note: return the constructor function always - required by requireJS.
 
 
 TODO:
-lightbox
+lightbox - update on click functions - as it won't route through agent.scan.
 
 Remove: temp agents
 TestAgent: '/build/js/TestAgent'
