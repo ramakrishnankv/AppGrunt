@@ -6,7 +6,6 @@ define('TestAgent', ['jquery'], function($) {
 
 	TestAgent.prototype = {
 		attachEvents: function() {
-			console.log(this.element);
 			this.element.on('click', $.proxy(this.analyse, this));
 		},
 		analyse: function() {

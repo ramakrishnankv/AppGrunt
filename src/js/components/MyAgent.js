@@ -6,7 +6,6 @@ define('MyAgent', ['jquery'], function($) {
 
 	MyAgent.prototype = {
 		attachEvents: function() {
-			console.log(this.element);
 			this.element.on('click', $.proxy(this.analyse, this));
 		},
 		analyse: function() {
