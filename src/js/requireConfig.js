@@ -3,7 +3,8 @@ var paths = {
 		requireDomReady: '/build/js/vendor/requireDomReady',
 		TestAgent: '/build/js/TestAgent',
 		MyAgent: '/build/js/components/MyAgent',
-		lightbox: '/build/js/utils/lightbox'
+		lightbox: '/build/js/utils/lightbox',
+		HideReveal: '/build/js/components/HideReveal'
 };
 
 requirejs.config({
