@@ -4,6 +4,6 @@ module.exports = {
 	},
 	scripts: {
 		files: ['src/**', '*.js' ],
-		tasks: ['less', 'jshint', 'copy', 'jade']
+		tasks: ['less', 'jshint', 'copy', 'webfont', 'jade']
 	}
 }

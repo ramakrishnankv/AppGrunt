@@ -10,7 +10,7 @@ module.exports = function(grunt) {
 	grunt.registerTask(
 			'build',
 			'Compiles all of the assets and copies the files to the build directory and runs lesshat',
-			['clean', 'copy', 'less', 'jade', 'jshint', 'uglify']
+			['clean', 'copy', 'webfont', 'less', 'jade', 'jshint', 'uglify']
 	);
 	// Default task(s).
 	grunt.registerTask('default', ['build', 'startapp', 'watch']);
