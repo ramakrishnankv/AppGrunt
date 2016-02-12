@@ -1,4 +1,21 @@
 .gradient-linear-v (@top, @bottom, @fColor, @lColor) {
+	/* default color */
+	background-color: @fColor;
+	/* FF 3.6+ */
+	background-image: -moz-linear-gradient(center @top, @fColor, @lColor @bottom);
+	/* Safari 4+, Chrome 2+ */
+	background-image: -webkit-gradient(linear, left @top, left @bottom, color-stop(0, @fColor), color-stop(@bottom, @lColor));
+	/* Safari 5.1+, Chrome 10+ */
+	background-image: -webkit-linear-gradient(@top, @fColor 0px, @lColor @bottom);
+	/* Opera 11.10 */
+	background-image: -o-linear-gradient(@fColor, @lColor @bottom);
+	/* IE6 & IE7 */
+	filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr = @{fColor}, EndColorStr = @{lColor})";
+	/* IE8+ */
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=@{fColor}, endColorstr=@{lColor})";
+	/* IE10+ */
+	background-image: -ms-linear-gradient(top, @fColor @top, @lColor @bottom);
+	/* Standard */
 	background-image: linear-gradient(@fColor @top, @lColor @bottom);
 }
 .border-radius (@size) {

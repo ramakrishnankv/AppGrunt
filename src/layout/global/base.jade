@@ -1,12 +1,25 @@
 doctype html
 html(lang='en')
+<!--[If lt IE 8]>
+html(lang='en' class='lt-ie8')
+<![endif]-->
+<!--[If lt IE 9]>
+html(lang='en' class='lt-ie9')
+<![endif]-->
+<!--[If lt IE 10]>
+html(lang='en' class='lt-ie10')
+<![endif]-->
+<!--[If gt IE 9]>
+html(lang='en')
+<![endif]-->
 
-	head
+head
 	link(rel="icon" type="image/png" href="/build/images/global/favico_logo.png")
 	include ./include/meta.jade
 	include ./include/styleList.jade
 		block title
 			title title
+
 	body
 
 		#wrapper
